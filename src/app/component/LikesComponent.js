@@ -1,10 +1,14 @@
 import React from 'react';
 
-export default class AwesomeComponent extends React.Component {
+export class LikesComponent extends React.Component {
 
     constructor(props) {
         super(props);
         this.onLike = this.onLike.bind(this);
+    }
+
+    sum(a, b) {
+        return a+b;
     }
 
     onLike() {

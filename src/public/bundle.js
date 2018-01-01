@@ -24613,6 +24613,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.LikesComponent = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -24628,19 +24629,24 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var AwesomeComponent = function (_React$Component) {
-    _inherits(AwesomeComponent, _React$Component);
+var LikesComponent = exports.LikesComponent = function (_React$Component) {
+    _inherits(LikesComponent, _React$Component);
 
-    function AwesomeComponent(props) {
-        _classCallCheck(this, AwesomeComponent);
+    function LikesComponent(props) {
+        _classCallCheck(this, LikesComponent);
 
-        var _this = _possibleConstructorReturn(this, (AwesomeComponent.__proto__ || Object.getPrototypeOf(AwesomeComponent)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (LikesComponent.__proto__ || Object.getPrototypeOf(LikesComponent)).call(this, props));
 
         _this.onLike = _this.onLike.bind(_this);
         return _this;
     }
 
-    _createClass(AwesomeComponent, [{
+    _createClass(LikesComponent, [{
+        key: 'sum',
+        value: function sum(a, b) {
+            return a + b;
+        }
+    }, {
         key: 'onLike',
         value: function onLike() {
             var newLikesCount = this.props.likes.count + 1;
@@ -24671,10 +24677,8 @@ var AwesomeComponent = function (_React$Component) {
         }
     }]);
 
-    return AwesomeComponent;
+    return LikesComponent;
 }(_react2.default.Component);
-
-exports.default = AwesomeComponent;
 
 /***/ })
 /******/ ]);
