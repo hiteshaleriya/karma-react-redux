@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import LikesComponent from "./LikesComponent.js";
+import * as actions from "../actions/actionCreator.js";
 
 /**
  * This function maps the state to a
@@ -27,10 +28,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         updateLikes: (val) => {
-            dispatch({
-                type: 'UPDATE_LIKE',
-                payload: { count: val }
-            });
+            dispatch(actions.updateLikes(val));
         }
     }
 }

@@ -24529,12 +24529,14 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _actionTypes = __webpack_require__(231);
+
 var likes = function likes() {
 				var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { count: 0 };
 				var action = arguments[1];
 
 				switch (action.type) {
-								case 'UPDATE_LIKE':
+								case _actionTypes.UPDATE_LIKE:
 												return _extends({}, state, action.payload);
 								default:
 												return state;
@@ -24559,6 +24561,12 @@ var _reactRedux = __webpack_require__(91);
 var _LikesComponent = __webpack_require__(229);
 
 var _LikesComponent2 = _interopRequireDefault(_LikesComponent);
+
+var _actionCreator = __webpack_require__(230);
+
+var actions = _interopRequireWildcard(_actionCreator);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24588,10 +24596,7 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     return {
         updateLikes: function updateLikes(val) {
-            dispatch({
-                type: 'UPDATE_LIKE',
-                payload: { count: val }
-            });
+            dispatch(actions.updateLikes(val));
         }
     };
 };
@@ -24613,7 +24618,6 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.LikesComponent = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -24629,7 +24633,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var LikesComponent = exports.LikesComponent = function (_React$Component) {
+var LikesComponent = function (_React$Component) {
     _inherits(LikesComponent, _React$Component);
 
     function LikesComponent(props) {
@@ -24679,6 +24683,41 @@ var LikesComponent = exports.LikesComponent = function (_React$Component) {
 
     return LikesComponent;
 }(_react2.default.Component);
+
+exports.default = LikesComponent;
+
+/***/ }),
+/* 230 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.updateLikes = updateLikes;
+
+var _actionTypes = __webpack_require__(231);
+
+function updateLikes(val) {
+    return {
+        type: _actionTypes.UPDATE_LIKE,
+        payload: { count: val }
+    };
+}
+
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var UPDATE_LIKE = exports.UPDATE_LIKE = "UPDATE_LIKE";
 
 /***/ })
 /******/ ]);

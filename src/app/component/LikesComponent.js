@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class LikesComponent extends React.Component {
+export default class LikesComponent extends React.Component {
 
     constructor(props) {
         super(props);
