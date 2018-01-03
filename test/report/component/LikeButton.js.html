@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for component/LikesComponent.js</title>
+    <title>Code coverage report for component/LikeButton.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">component/</a> LikesComponent.js
+      <a href="../index.html">all files</a> / <a href="index.html">component/</a> LikeButton.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,13 +35,13 @@
         <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>2/4</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -65,51 +65,69 @@
 20
 21
 22
-23</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+23
+24
+25
+26
+27
+28
+29</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import LikeButton from "./LikeButton.js";
+import PropTypes from 'prop-types';
 &nbsp;
-export default class LikesComponent extends React.Component {
+class LikeButton extends React.Component {
 &nbsp;
     constructor(props) <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        super(props);</span>
-<span class="cstat-no" title="statement not covered" >        this.onLike = this.onLike.bind(this);</span>
-    }
-&nbsp;
-    onLike() <span class="fstat-no" title="function not covered" >{</span>
-        let newLikesCount = <span class="cstat-no" title="statement not covered" >this.props.likes.count + 1;</span>
-<span class="cstat-no" title="statement not covered" >        this.props.updateLikes(newLikesCount);</span>
     }
 &nbsp;
     render() <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        return (&lt;div&gt;</span>
-            &lt;p&gt;Likes: {this.props.likes.count}&lt;/p&gt;
-            &lt;LikeButton title="Like Me" count={this.props.likes.count} onLike={this.onLike} /&gt;
+            &lt;button onClick={this.props.onLike}&gt;{this.props.title} ({this.props.count})&lt;/button&gt;
         &lt;/div&gt;);
     }
 &nbsp;
-}</pre></td></tr>
+}
+&nbsp;
+LikeButton.propTypes = {
+    title: PropTypes.string.isRequired,
+    count: PropTypes.number,
+    onLike: PropTypes.func
+};
+&nbsp;
+LikeButton.defaultProps = {
+    count: 0,
+    onLike: () =&gt; <span class="fstat-no" title="function not covered" >{}</span>
+};
+&nbsp;
+export default LikeButton;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->

@@ -1,14 +1,11 @@
 import React from 'react';
+import LikeButton from "./LikeButton.js";
 
 export default class LikesComponent extends React.Component {
 
     constructor(props) {
         super(props);
         this.onLike = this.onLike.bind(this);
-    }
-
-    sum(a, b) {
-        return a+b;
     }
 
     onLike() {
@@ -18,10 +15,8 @@ export default class LikesComponent extends React.Component {
 
     render() {
         return (<div>
-            Likes : <span>{this.props.likes.count}</span>
-            <div>
-                <button onClick={this.onLike}>Like Me</button>
-            </div>
+            <p>Likes: {this.props.likes.count}</p>
+            <LikeButton title="Like Me" count={this.props.likes.count} onLike={this.onLike} />
         </div>);
     }
 
