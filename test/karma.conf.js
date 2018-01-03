@@ -30,6 +30,13 @@ module.exports = function(config) {
             'specs/*.js': ['webpack']
         },
         webpack: {
+            externals: {
+                cheerio: 'window',
+                'react/addons': true,
+                'react/lib/ExecutionEnvironment': true,
+                'react/lib/ReactContext': true,
+                'react-addons-test-utils': 'react-test-renderer'
+            },
             module: {
                 loaders: [{
                     test: /\.js?/,

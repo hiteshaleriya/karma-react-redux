@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<testsuite name="PhantomJS 2.1.1 (Linux 0.0.0)" package="" timestamp="2018-01-03T17:42:03" id="0" hostname="hitesh-Latitude-E6540" tests="4" errors="0" failures="0" time="0.003">
+<testsuite name="PhantomJS 2.1.1 (Linux 0.0.0)" package="" timestamp="2018-01-03T17:49:57" id="0" hostname="hitesh-Latitude-E6540" tests="4" errors="0" failures="0" time="0.004">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
   </properties>
   <testcase name="Action creator Suit should create an action to update likes" time="0.002" classname="Action creator Suit"/>
-  <testcase name="Likes Component Suit should add two numbers" time="0" classname="Likes Component Suit"/>
+  <testcase name="Likes Component Suit should add two numbers" time="0.001" classname="Likes Component Suit"/>
   <testcase name="Reducer Suit should return the initial state" time="0" classname="Reducer Suit"/>
   <testcase name="Reducer Suit should handle update likes" time="0.001" classname="Reducer Suit"/>
   <system-out>
