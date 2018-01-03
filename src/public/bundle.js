@@ -24940,7 +24940,7 @@ var LikesComponent = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                null,
+                { className: "likes-container" },
                 _react2.default.createElement(
                     "p",
                     null,

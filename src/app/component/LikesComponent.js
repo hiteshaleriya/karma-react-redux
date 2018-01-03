@@ -14,7 +14,7 @@ export default class LikesComponent extends React.Component {
     }
 
     render() {
-        return (<div>
+        return (<div className="likes-container">
             <p>Likes: {this.props.likes.count}</p>
             <LikeButton title="Like Me" count={this.props.likes.count} onLike={this.onLike} />
         </div>);
