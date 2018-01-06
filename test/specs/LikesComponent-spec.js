@@ -4,12 +4,14 @@ import React from 'react';
 
 describe('Likes Component test suit', () => {
 
-    let props, wrapper;
+    let props, wrapper, likesCount;
 
     beforeEach(function() {
         props = {
             likes: { count: 2 },
-            updateLikes: () => {}
+            updateLikes: (count) => {
+                likesCount = count;
+            }
         };
         wrapper = mount(<LikesComponent {...props} />);
     });
@@ -20,6 +22,12 @@ describe('Likes Component test suit', () => {
         
         // checking text node
         expect(wrapper.find('p').text()).toBe(`Likes: ${props.likes.count}`);
+    });
+
+    it('should increment likes count on calling onLike', () => {
+        // increase like by one
+        wrapper.instance().onLike();
+        expect(likesCount).toBe(props.likes.count+1);
     });
 
 });
