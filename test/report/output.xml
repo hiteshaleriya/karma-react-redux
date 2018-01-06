@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
-<testsuite name="PhantomJS 2.1.1 (Linux 0.0.0)" package="" timestamp="2018-01-03T18:21:53" id="0" hostname="hitesh-Latitude-E6540" tests="5" errors="0" failures="0" time="0.009">
+<testsuite name="PhantomJS 2.1.1 (Linux 0.0.0)" package="" timestamp="2018-01-06T15:06:48" id="0" hostname="hitesh-Latitude-E6540" tests="6" errors="0" failures="0" time="0.014">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
   </properties>
+  <testcase name="LikeButton test suit should render the component with valid props" time="0.004" classname="LikeButton test suit"/>
+  <testcase name="LikeButton test suit should call the given function on click" time="0.003" classname="LikeButton test suit"/>
+  <testcase name="Likes Component test suit should render the component" time="0.005" classname="Likes Component test suit"/>
   <testcase name="Action creator Suit should create an action to update likes" time="0.001" classname="Action creator Suit"/>
-  <testcase name="Likes Component Suit should render the component" time="0.004" classname="Likes Component Suit"/>
-  <testcase name="Likes Component Suit should render subcomponents with valid props" time="0.003" classname="Likes Component Suit"/>
   <testcase name="Reducer Suit should return the initial state" time="0" classname="Reducer Suit"/>
   <testcase name="Reducer Suit should handle update likes" time="0.001" classname="Reducer Suit"/>
   <system-out>
