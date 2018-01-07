@@ -11,6 +11,9 @@ describe('Likes Component test suit', () => {
             likes: { count: 2 },
             updateLikes: (count) => {
                 likesCount = count;
+            },
+            asyncUpdateLikes: (count) => {
+                likesCount = count;
             }
         };
         wrapper = mount(<LikesComponent {...props} />);
@@ -27,6 +30,12 @@ describe('Likes Component test suit', () => {
     it('should increment likes count on calling onLike', () => {
         // increase like by one
         wrapper.instance().onLike();
+        expect(likesCount).toBe(props.likes.count+1);
+    });
+
+    it('should increment likes count on calling asyncLike', () => {
+        // increase like by one
+        wrapper.instance().asyncLike();
         expect(likesCount).toBe(props.likes.count+1);
     });
 

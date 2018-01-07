@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 /*
  * The Provider component provides
  * the React store to all its child
@@ -21,8 +22,9 @@ const initialState = {};
  * This creates the store so we
  * can listen to changes and
  * dispatch actions.
+ * thunk: we are using thunk middleware for supporting async actions
  */
-const store = createStore(reducers, initialState, applyMiddleware(logger));
+const store = createStore(reducers, initialState, applyMiddleware(thunk, logger));
 
 class App extends React.Component {
     

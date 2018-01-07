@@ -29,6 +29,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         updateLikes: (val) => {
             dispatch(actions.updateLikes(val));
+        },
+        asyncUpdateLikes: (val) => {
+        	dispatch(actions.asyncUpdateLikes(val));
         }
     }
 }

@@ -11258,6 +11258,10 @@ var _reactDom = __webpack_require__(113);
 
 var _redux = __webpack_require__(51);
 
+var _reduxThunk = __webpack_require__(233);
+
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
 var _reactRedux = __webpack_require__(92);
 
 var _reduxLogger = __webpack_require__(226);
@@ -11294,8 +11298,9 @@ var initialState = {};
  * This creates the store so we
  * can listen to changes and
  * dispatch actions.
+ * thunk: we are using thunk middleware for supporting async actions
  */
-var store = (0, _redux.createStore)(_index2.default, initialState, (0, _redux.applyMiddleware)(logger));
+var store = (0, _redux.createStore)(_index2.default, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default, logger));
 
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
@@ -24877,6 +24882,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     return {
         updateLikes: function updateLikes(val) {
             dispatch(actions.updateLikes(val));
+        },
+        asyncUpdateLikes: function asyncUpdateLikes(val) {
+            dispatch(actions.asyncUpdateLikes(val));
         }
     };
 };
@@ -24926,6 +24934,7 @@ var LikesComponent = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (LikesComponent.__proto__ || Object.getPrototypeOf(LikesComponent)).call(this, props));
 
         _this.onLike = _this.onLike.bind(_this);
+        _this.asyncLike = _this.asyncLike.bind(_this);
         return _this;
     }
 
@@ -24934,6 +24943,12 @@ var LikesComponent = function (_React$Component) {
         value: function onLike() {
             var newLikesCount = this.props.likes.count + 1;
             this.props.updateLikes(newLikesCount);
+        }
+    }, {
+        key: "asyncLike",
+        value: function asyncLike() {
+            var newLikesCount = this.props.likes.count + 1;
+            this.props.asyncUpdateLikes(newLikesCount);
         }
     }, {
         key: "render",
@@ -24947,7 +24962,9 @@ var LikesComponent = function (_React$Component) {
                     "Likes: ",
                     this.props.likes.count
                 ),
-                _react2.default.createElement(_LikeButton2.default, { title: "Like Me", count: this.props.likes.count, onLike: this.onLike })
+                _react2.default.createElement(_LikeButton2.default, { title: "Like Me", count: this.props.likes.count, onLike: this.onLike }),
+                _react2.default.createElement("br", null),
+                _react2.default.createElement(_LikeButton2.default, { title: "Async Like", count: this.props.likes.count, onLike: this.asyncLike })
             );
         }
     }]);
@@ -25040,6 +25057,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.updateLikes = updateLikes;
+exports.asyncUpdateLikes = asyncUpdateLikes;
 
 var _actionTypes = __webpack_require__(97);
 
@@ -25049,6 +25067,46 @@ function updateLikes(val) {
         payload: { count: val }
     };
 }
+
+function asyncUpdateLikes(val) {
+    return function (dispatch) {
+        setTimeout(function () {
+            dispatch({
+                type: _actionTypes.UPDATE_LIKE,
+                payload: { count: val }
+            });
+        }, 1000);
+    };
+}
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+function createThunkMiddleware(extraArgument) {
+  return function (_ref) {
+    var dispatch = _ref.dispatch;
+    var getState = _ref.getState;
+    return function (next) {
+      return function (action) {
+        if (typeof action === 'function') {
+          return action(dispatch, getState, extraArgument);
+        }
+
+        return next(action);
+      };
+    };
+  };
+}
+
+var thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+exports['default'] = thunk;
 
 /***/ })
 /******/ ]);
