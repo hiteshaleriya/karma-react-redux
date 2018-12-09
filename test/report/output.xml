@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
-<testsuite name="PhantomJS 2.1.1 (Mac OS X 0.0.0)" package="" timestamp="2018-12-09T15:41:31" id="0" hostname="HYRDMACPRO188" tests="9" errors="0" failures="0" time="1.234">
+<testsuite name="PhantomJS 2.1.1 (Mac OS X 0.0.0)" package="" timestamp="2018-12-09T15:44:35" id="0" hostname="HYRDMACPRO188" tests="9" errors="0" failures="0" time="1.246">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
   </properties>
-  <testcase name="LikeButton test suit should render the component with valid props" time="0.009" classname="LikeButton test suit"/>
-  <testcase name="LikeButton test suit should call the given function on click" time="0.002" classname="LikeButton test suit"/>
-  <testcase name="Likes Component test suit should render the component" time="0.009" classname="Likes Component test suit"/>
-  <testcase name="Likes Component test suit should increment likes count on calling onLike" time="0.001" classname="Likes Component test suit"/>
+  <testcase name="LikeButton test suit should render the component with valid props" time="0.019" classname="LikeButton test suit"/>
+  <testcase name="LikeButton test suit should call the given function on click" time="0.004" classname="LikeButton test suit"/>
+  <testcase name="Likes Component test suit should render the component" time="0.017" classname="Likes Component test suit"/>
+  <testcase name="Likes Component test suit should increment likes count on calling onLike" time="0.002" classname="Likes Component test suit"/>
   <testcase name="Likes Component test suit should increment likes count on calling asyncLike" time="0.001" classname="Likes Component test suit"/>
   <testcase name="Action creator Suit should create an action to update likes" time="0" classname="Action creator Suit"/>
-  <testcase name="Async Action creator Suit should create an action to update likes async" time="1.212" classname="Async Action creator Suit"/>
+  <testcase name="Async Action creator Suit should create an action to update likes async" time="1.202" classname="Async Action creator Suit"/>
   <testcase name="Reducer Suit should return the initial state" time="0" classname="Reducer Suit"/>
-  <testcase name="Reducer Suit should handle update likes" time="0" classname="Reducer Suit"/>
+  <testcase name="Reducer Suit should handle update likes" time="0.001" classname="Reducer Suit"/>
   <system-out>
     <![CDATA[
 ]]>
